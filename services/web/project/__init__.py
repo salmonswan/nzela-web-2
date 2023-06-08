@@ -1,9 +1,16 @@
-from flask import Flask, jsonify
+from flask import (
+    Flask,
+    render_template
+)
 
 
 app = Flask(__name__)
 
 
-@app.route("/")
-def hello_world():
-    return jsonify(hello="world")
+@app.route('/')
+def main_page():
+    return render_template('index.html')
+
+
+if __name__ == "__main__":
+    app.run()
